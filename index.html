@@ -1,0 +1,318 @@
+I understand. A great website needs to be more than just a list of information; it needs to be persuasive, visually appealing, and designed to guide a visitor toward a specific action, like booking a consultation.
+I've completely redesigned the website from the ground up. This new version focuses on:
+ * Visual Appeal: A modern, clean layout with a professional color scheme.
+ * Conversion Focus: Clear calls-to-action (CTAs) that prompt visitors to book a call.
+ * Credibility: Sections designed to build trust, such as testimonials and a clear value proposition.
+ * Storytelling: A narrative structure that addresses the pain points of an early-stage founder and presents your services as the solution.
+Below is the complete code for this new, improved website. You can save all of this code in a single file named index.html.
+Riya Bhosale's Professional Website
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riya Bhosale - Business Consultant for Founders</title>
+    <meta name="description" content="Helping early-stage founders simplify business, build strategy, and scale smart. Book a clarity call with Riya Bhosale.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS styles for the website */
+        :root {
+            --primary-color: #0077b5; /* LinkedIn Blue */
+            --secondary-color: #f4f4f4; /* Light Grey */
+            --accent-color: #ff914d; /* Orange for emphasis */
+            --dark-color: #333;
+            --light-color: #fff;
+            --max-width: 1000px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: auto;
+            padding: 0 2rem;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+
+        a.cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--light-color);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        a.cta-button:hover {
+            transform: translateY(-3px);
+            background-color: #ff7d2b;
+        }
+
+        .section {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        /* --- Header & Hero Section --- */
+        .hero {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 6rem 0;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .hero-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--light-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-text p.subheading {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+
+        /* --- Problem/Solution Section --- */
+        .problem-solution {
+            background-color: var(--light-color);
+            padding: 4rem 0;
+        }
+
+        .problem-solution h2 {
+            margin-bottom: 2rem;
+        }
+
+        .points-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .point-card {
+            background-color: var(--secondary-color);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .point-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .point-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        /* --- Services Section --- */
+        .services {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+        }
+
+        .services h2 {
+            color: var(--light-color);
+            margin-bottom: 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .service-card h3 {
+            color: var(--light-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .service-card .price {
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-top: 1rem;
+            display: block;
+        }
+
+        /* --- Testimonials Section --- */
+        .testimonials {
+            background-color: var(--light-color);
+        }
+
+        .testimonials h2 {
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--secondary-color);
+            padding: 2rem;
+            border-left: 5px solid var(--accent-color);
+            border-radius: 8px;
+            font-style: italic;
+            position: relative;
+        }
+
+        .testimonial-card p {
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card span {
+            font-style: normal;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+            text-align: right;
+        }
+
+        /* --- Contact Section --- */
+        .contact {
+            background-color: var(--secondary-color);
+        }
+
+        .contact h2 {
+            margin-bottom: 1rem;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <img src="placeholder.jpg" alt="Riya Bhosale" class="hero-image">
+            <div class="hero-text">
+                <p class="subheading">Hello, I'm Riya Bhosale</p>
+                <h1>From Chaos to Clarity: Your Business Scaled Smart</h1>
+                <p class="subheading">I help early-stage founders build rock-solid strategies, streamline operations, and prepare for sustainable growth.</p>
+                <a href="#contact" class="cta-button">Book a Clarity Call</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="section problem-solution">
+        <div class="container">
+            <h2>Are You a Founder Feeling Overwhelmed?</h2>
+            <p>You're full of great ideas, but:</p>
+            <div class="points-container">
+                <div class="point-card">
+                    <h3>❌ You lack a clear roadmap.</h3>
+                    <p>Your business feels like a series of reactive decisions rather than a proactive plan.</p>
+                </div>
+                <div class="point-card">
+                    <h3>❌ You're wasting time and money.</h3>
+                    <p>You're not sure which tasks to prioritize to drive real revenue and growth.</p>
+                </div>
+                <div class="point-card">
+                    <h3>❌ You can't scale.</h3>
+                    <p>Your business is too reliant on you, and you don't have repeatable systems in place.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="services" class="section services">
+        <div class="container">
+            <h2>The Solution: Strategic Services for Your Business</h2>
+            <p>I provide tailored guidance and hands-on support to help you:</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>60-min Clarity Call</h3>
+                    <p>Get a clear, actionable 90-day plan. We'll identify your biggest challenge and outline immediate steps you can take tomorrow.</p>
+                    <span class="price">Starting from ₹2,500</span>
+                </div>
+                <div class="service-card">
+                    <h3>Startup Strategy Blueprint</h3>
+                    <p>A comprehensive, ready-to-execute strategy document covering positioning, pricing, and a go-to-market plan designed for your unique business.</p>
+                    <span class="price">₹4,999</span>
+                </div>
+                <div class="service-card">
+                    <h3>LinkedIn Profile & Positioning Makeover</h3>
+                    <p>Optimize your professional presence to attract the right founders, partners, and investors, building trust and authority.</p>
+                    <span class="price">₹3,000</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section testimonials">
+        <div class="container">
+            <h2>What My Clients Say</h2>
+            <div class="testimonial-card">
+                <p>"Riya helped us go from a vague idea to a concrete, 3-month plan that doubled our leads in the first quarter."</p>
+                <span>— Client Name, Founder</span>
+            </div>
+            </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2>Ready for Clarity and Growth?</h2>
+            <p>Let's turn your vision into a reality. Book your clarity call today.</p>
+            <a href="mailto:hello@riyabhosale.example" class="cta-button">Book a Clarity Call</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2023 Riya Bhosale. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+
